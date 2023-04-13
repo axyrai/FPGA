@@ -51,7 +51,7 @@ endmodule
 
 module DFF(input D,input clk,input EN ,output wire Q);
 reg out;
-            always @(posedge clk or EN) 
+            always @(posedge clk ) 
                     begin
                         if(EN)
                                 begin

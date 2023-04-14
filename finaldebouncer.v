@@ -1,7 +1,8 @@
 module debouncer(button,clk,result);
 input button,clk;
 output reg result;
-reg q1,q2,q3,q4;
+reg q1,q2,q4;
+wire q3;
 reg [4:0] count;
 
 always@(posedge clk)
@@ -14,10 +15,8 @@ begin
         q2<=q1;
 end
 
-always@(q1 or q2)
-begin
-        q3<=q1^q2;
-end
+
+assign q3=q1^q2;
 
 always@(posedge clk)
 begin
